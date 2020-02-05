@@ -4,7 +4,9 @@ Copyright (C) 2013-2019  Manav Bhatia
 [![Build Status](https://travis-ci.com/MASTmultiphysics/mast-multiphysics.svg?branch=master)](https://travis-ci.com/MASTmultiphysics/mast-multiphysics)
 
 This code was developed under funding from the Air Force Research Laboratory. 
-MAST was cleared for public release on 08 Nov 2016 with case number 88ABW-2016-5689. 
+MAST was initially cleared for public release on 08 Nov 2016 with case number 88ABW-2016-5689. 
+Since then, additional features of MAST were cleared for public release:
+* 30 Jan 2020 with case number 88ABW-2020-0297
 
 Documentation for the code is available at [https://mastmultiphysics.github.io](https://mastmultiphysics.github.io).
 
