@@ -1,45 +1,46 @@
-target_sources( mast_catch_tests
-                PRIVATE
-                ${CMAKE_CURRENT_LIST_DIR}/mast_solid_2d_section_element_property_card.cpp)
+target_sources(mast_catch_tests
+               PRIVATE
+               ${CMAKE_CURRENT_LIST_DIR}/mast_solid_2d_section_element_property_card.cpp
+               ${CMAKE_CURRENT_LIST_DIR}/mast_3d_isotropic_element_property_card.cpp)
        
 
-# ## ============================================================================
-# ##                              3D Property Card Tests
-# ## ============================================================================
-# add_test(NAME Element_Property_Card_Isotropic_3D_Thermoelastic
-#          COMMAND mast_catch_tests "element_property_card_constant_thermoelastic_isotropic_3d")
-# set_tests_properties(Element_Property_Card_Isotropic_3D_Thermoelastic
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_3D_Thermoelastic
-#                      FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Thermoelastic)
-# 
-# add_test(NAME Element_Property_Card_Isotropic_3D_Structural
-#          COMMAND mast_catch_tests "element_property_card_constant_structural_isotropic_3d")
-# set_tests_properties(Element_Property_Card_Isotropic_3D_Structural
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_3D_Structural
-#                      FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Structural)
-# 
-# add_test(NAME Element_Property_Card_Isotropic_3D_Dynamic
-#          COMMAND mast_catch_tests "element_property_card_constant_dynamic_isotropic_3d")
-# set_tests_properties(Element_Property_Card_Isotropic_3D_Dynamic
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_3D_Dynamic
-#                      FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Dynamic)
-# 
-# add_test(NAME Element_Property_Card_Isotropic_3D_Heat_Transfer
-#          COMMAND mast_catch_tests "element_property_card_constant_heat_transfer_isotropic_3d")
-# set_tests_properties(Element_Property_Card_Isotropic_3D_Heat_Transfer
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_3D_Heat_Transfer
-#                      FIXTURES_SETUP Element_Property_Card_3D_Heat_Transfer)
-#                      
-# add_test(NAME Element_Property_Card_Isotropic_3D_Transient_Heat_Transfer
-#          COMMAND mast_catch_tests "element_property_card_constant_transient_heat_transfer_isotropic_3d")
-# set_tests_properties(Element_Property_Card_Isotropic_3D_Transient_Heat_Transfer
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_3D_Transient_Heat_Transfer
-#                      FIXTURES_SETUP Element_Property_Card_3D_Transient_Heat_Transfer)
+## ============================================================================
+##                              3D Property Card Tests
+## ============================================================================
+add_test(NAME Element_Property_Card_Isotropic_3D_Thermoelastic
+         COMMAND mast_catch_tests "element_property_card_constant_thermoelastic_isotropic_3d")
+set_tests_properties(Element_Property_Card_Isotropic_3D_Thermoelastic
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_3D_Thermoelastic
+                     FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Thermoelastic)
+
+add_test(NAME Element_Property_Card_Isotropic_3D_Structural
+         COMMAND mast_catch_tests "element_property_card_constant_structural_isotropic_3d")
+set_tests_properties(Element_Property_Card_Isotropic_3D_Structural
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_3D_Structural
+                     FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Structural)
+
+add_test(NAME Element_Property_Card_Isotropic_3D_Dynamic
+         COMMAND mast_catch_tests "element_property_card_constant_dynamic_isotropic_3d")
+set_tests_properties(Element_Property_Card_Isotropic_3D_Dynamic
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_3D_Dynamic
+                     FIXTURES_SETUP Element_Property_Card_Isotropic_3D_Dynamic)
+
+add_test(NAME Element_Property_Card_Isotropic_3D_Heat_Transfer
+         COMMAND mast_catch_tests "element_property_card_constant_heat_transfer_isotropic_3d")
+set_tests_properties(Element_Property_Card_Isotropic_3D_Heat_Transfer
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_3D_Heat_Transfer
+                     FIXTURES_SETUP Element_Property_Card_3D_Heat_Transfer)
+                     
+add_test(NAME Element_Property_Card_Isotropic_3D_Transient_Heat_Transfer
+         COMMAND mast_catch_tests "element_property_card_constant_transient_heat_transfer_isotropic_3d")
+set_tests_properties(Element_Property_Card_Isotropic_3D_Transient_Heat_Transfer
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_3D_Transient_Heat_Transfer
+                     FIXTURES_SETUP Element_Property_Card_3D_Transient_Heat_Transfer)
 
 ## ============================================================================
 ##                              2D Property Card Tests
