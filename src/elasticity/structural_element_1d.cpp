@@ -1124,6 +1124,8 @@ _internal_residual_operation(bool if_vk,
 {
     this->initialize_direct_strain_operator(qp, fe, Bmat_mem);
     
+    RealMatrixX material_D_mat_T = RealMatrixX::Zero(2,2);
+    
     // first handle constant throught the thickness stresses: membrane and vonKarman
     Bmat_mem.vector_mult(vec1_n1, _local_sol);
     vec2_n1 = material_A_mat * vec1_n1; // linear direct stress
@@ -1209,8 +1211,12 @@ _internal_residual_operation(bool if_vk,
         Bmat_bend_v.vector_mult_transpose(vec3_n2, vec1_n1);
         local_f += JxW[qp] * vec3_n2;
 
+        material_D_mat_T(0,0) = material_D_mat(1,1);
+        material_D_mat_T(1,1) = material_D_mat(0,0);
+        material_D_mat_T(0,1) = material_D_mat(1,0);
+        material_D_mat_T(1,0) = material_D_mat(0,1);
         Bmat_bend_w.vector_mult(vec2_n1, _local_sol);
-        vec1_n1 = material_D_mat * vec2_n1;
+        vec1_n1 = material_D_mat_T * vec2_n1;
         Bmat_bend_w.vector_mult_transpose(vec3_n2, vec1_n1);
         local_f += JxW[qp] * vec3_n2;
     }
@@ -1369,7 +1375,7 @@ _internal_residual_operation(bool if_vk,
             Bmat_bend_v.right_multiply_transpose(mat2_n2n2, mat1_n1n2);
             local_jac += JxW[qp] * mat2_n2n2;
 
-            Bmat_bend_w.left_multiply(mat1_n1n2, material_D_mat);
+            Bmat_bend_w.left_multiply(mat1_n1n2, material_D_mat_T);
             Bmat_bend_w.right_multiply_transpose(mat2_n2n2, mat1_n1n2);
             local_jac += JxW[qp] * mat2_n2n2;
         }
