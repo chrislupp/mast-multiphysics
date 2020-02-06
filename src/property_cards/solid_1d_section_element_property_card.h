@@ -217,6 +217,33 @@ namespace MAST {
          *   section area moment of inertia
          */
         virtual MAST::FieldFunction<RealMatrixX>& I();
+        
+        /*!
+         *   @returns constant reference to the function that calculates the 
+         *   shear coeffcients (kappa)
+         */
+        virtual const MAST::FieldFunction<RealMatrixX>& Kap() const;
+        
+        
+        /*!
+         *   @returns constant reference to the function that calculates the 
+         *   warping constant
+         */
+        virtual const MAST::FieldFunction<Real>& Gam() const;
+        
+        
+        /*!
+         *   @returns reference to the function that calculates the 
+         *   shear coeffcients (kappa)
+         */
+        virtual MAST::FieldFunction<RealMatrixX>& Kap();
+        
+        
+        /*!
+         *   @returns reference to the function that calculates the 
+         *   warping constant
+         */
+        virtual MAST::FieldFunction<Real>& Gam();
 
         /*!
          *  returns true if the property card depends on the function \p f
@@ -248,6 +275,10 @@ namespace MAST {
         std::unique_ptr<MAST::FieldFunction<Real> > _Az;
         
         std::unique_ptr<MAST::FieldFunction<RealMatrixX> > _AI;
+        
+        std::unique_ptr<MAST::FieldFunction<RealMatrixX> > _Kappa;
+        
+        std::unique_ptr<MAST::FieldFunction<Real> > _Gamma;
         
         std::unique_ptr<MAST::FieldFunction<RealMatrixX> > _stiff_A;
 
