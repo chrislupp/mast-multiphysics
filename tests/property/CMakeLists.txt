@@ -1,5 +1,6 @@
 target_sources(mast_catch_tests
                PRIVATE
+               ${CMAKE_CURRENT_LIST_DIR}/mast_solid_1d_section_element_property_card.cpp
                ${CMAKE_CURRENT_LIST_DIR}/mast_solid_2d_section_element_property_card.cpp
                ${CMAKE_CURRENT_LIST_DIR}/mast_3d_isotropic_element_property_card.cpp)
        
@@ -42,6 +43,7 @@ set_tests_properties(Element_Property_Card_Isotropic_3D_Transient_Heat_Transfer
                      FIXTURES_REQUIRED Isotropic_Material_3D_Transient_Heat_Transfer
                      FIXTURES_SETUP Element_Property_Card_3D_Transient_Heat_Transfer)
 
+                     
 ## ============================================================================
 ##                              2D Property Card Tests
 ## ============================================================================
@@ -79,20 +81,51 @@ set_tests_properties(Element_Property_Card_2D_Transient_Heat_Transfer
                      FIXTURES_REQUIRED Isotropic_Material_2D_Transient_Heat_Transfer
                      FIXTURES_SETUP Element_Property_Card_2D_Transient_Heat_Transfer)
                      
+
+## ============================================================================
+##                              1D Property Card Tests
+## ============================================================================
+     
+## ============================================================================
+# 1D (Default, Rectangular) Property Card Tests
+add_test(NAME Element_Property_Card_1D_Base
+         COMMAND mast_catch_tests "solid_element_property_card_constant_base_1d")
+set_tests_properties(Element_Property_Card_1D_Base
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_1D_Structural)
                      
+add_test(NAME Element_Property_Card_1D_Base_Sensitivity
+         COMMAND mast_catch_tests "solid_element_property_card_constant_base_sensitivity_1d")
+set_tests_properties(Element_Property_Card_1D_Base_Sensitivity
+                     PROPERTIES
+                     FIXTURES_REQUIRED Element_Property_Card_1D_Base)
                      
+add_test(NAME Element_Property_Card_1D_Heat_Transfer
+         COMMAND mast_catch_tests "solid_element_property_card_constant_heat_transfer_1d")
+set_tests_properties(Element_Property_Card_1D_Heat_Transfer
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_1D_Heat_Transfer)
+
+add_test(NAME Element_Property_Card_1D_Thermoelastic
+         COMMAND mast_catch_tests "solid_element_property_card_constant_thermoelastic_1d")
+set_tests_properties(Element_Property_Card_1D_Thermoelastic
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_1D_Thermoelastic)
+
+add_test(NAME Element_Property_Card_1D_Structural
+         COMMAND mast_catch_tests "solid_element_property_card_constant_structural_1d")
+set_tests_properties(Element_Property_Card_1D_Structural
+                     PROPERTIES
+                     FIXTURES_REQUIRED  Isotropic_Material_1D_Structural)
                      
-# ## ============================================================================
-# ##                              1D Property Card Tests
-# ## ============================================================================
-#      
-# # 1D Property Card Tests
-# # add_test(NAME Element_Property_Card_1D_Base
-# #          COMMAND mast_catch_tests element_property_card_constant_base_1d)
-# # set_tests_properties(Element_Property_Card_1D_Base
-# #                      PROPERTIES
-# #                      FIXTURES_REQUIRED Isotropic_Material_1D_Heat_Transfer)
-# 
+add_test(NAME Element_Property_Card_1D_Dynamic
+         COMMAND mast_catch_tests "solid_element_property_card_constant_dynamic_1d")
+set_tests_properties(Element_Property_Card_1D_Dynamic
+                     PROPERTIES
+                     FIXTURES_REQUIRED Isotropic_Material_1D_Dynamic)
+## ============================================================================
+
+
 # ## ============================================================================
 # # 1D Arbitrary Cross Section
 # add_test(NAME Arbitrary_Element_Property_Card_1D_Base
@@ -320,41 +353,3 @@ set_tests_properties(Element_Property_Card_2D_Transient_Heat_Transfer
 #                      PROPERTIES
 #                      FIXTURES_REQUIRED Isotropic_Material_1D_Dynamic)
 # ## ============================================================================
-                     
-                     
-                     
-# add_test(NAME Element_Property_Card_1D_Heat_Transfer
-#          COMMAND mast_catch_tests element_property_card_constant_heat_transfer_1d)
-# set_tests_properties(Element_Property_Card_1D_Heat_Transfer
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_1D_Heat_Transfer)
-# 
-#                      
-# add_test(NAME Element_Property_Card_1D_Thermoelastic
-#          COMMAND mast_catch_tests element_property_card_constant_thermoelastic_1d)
-# set_tests_properties(Element_Property_Card_1D_Thermoelastic
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_1D_Thermoelastic)
-#                      
-#                      
-# add_test(NAME Element_Property_Card_1D_Structural
-#          COMMAND mast_catch_tests element_property_card_constant_structural_1d)
-# set_tests_properties(Element_Property_Card_1D_Structural
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED  Isotropic_Material_1D_Structural
-#                      FIXTURES_SETUP     Element_Property_Card_1D_Structural)
-#          
-# 
-# add_test(NAME Element_Property_Card_1D_Dynamic
-#          COMMAND mast_catch_tests element_property_card_constant_dynamic_1d)
-# set_tests_properties(Element_Property_Card_1D_Dynamic
-#                      PROPERTIES
-#                      FIXTURES_REQUIRED Isotropic_Material_1D_Dynamic)
-
-           
-
-         
-
-         
-         
-
