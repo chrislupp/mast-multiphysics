@@ -66,7 +66,6 @@ TEST_CASE("solid_element_property_card_constant_base_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     
     // Initialize the section
     MAST::Solid1DSectionElementPropertyCard section;
@@ -242,7 +241,6 @@ TEST_CASE("solid_element_property_card_constant_base_sensitivity_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     
     // Initialize the section
     MAST::Solid1DSectionElementPropertyCard section;
@@ -730,7 +728,6 @@ TEST_CASE("solid_element_property_card_constant_heat_transfer_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     
     // Initialize the section
     MAST::Solid1DSectionElementPropertyCard section;
@@ -897,7 +894,6 @@ TEST_CASE("solid_element_property_card_constant_thermoelastic_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     material.add(alpha_f);
     
     // Initialize the section
@@ -1084,7 +1080,6 @@ TEST_CASE("solid_element_property_card_constant_dynamic_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     material.add(alpha_f);
     
     // Initialize the section
@@ -1274,7 +1269,6 @@ TEST_CASE("solid_element_property_card_constant_structural_1d",
     material.add(cp_f);
     material.add(E_f);
     material.add(nu_f);
-    material.add(rho_f);
     material.add(alpha_f);
     
     // Initialize the section
